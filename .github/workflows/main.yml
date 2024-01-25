@@ -44,7 +44,7 @@ jobs:
       run: docker build -f Dockerfile -t iso188/pygoat .
 
     - name: Docker Login
-      run: echo ${{ secrets.PWD }} | docker login -u ${{ secrets.USER }}
+      run: echo ${{ secrets.PWD }} | docker login -u ${{ secrets.USER }} --password-stdin
 
     - name: Push Docker Image
       run: docker push iso188/pygoat
