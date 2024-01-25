@@ -48,6 +48,9 @@ jobs:
 
     - name: Push Docker Image
       run: docker push iso188/pygoat
+    
+    - name: Enable Docker Scout on Repo
+      run: docker scout repo enable --org iso188/pygoat
 
     - name: Scan Image
       uses: docker/scout-action@v1.0.9
